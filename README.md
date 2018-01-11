@@ -2,12 +2,12 @@
 
  - build: 
  ```
- docker build  -t bokeh .
+ docker build  -t parallel-vis .
  ```
 
  - run:
  ```
- docker run -i -t -p 8888:8888 --cap-add SYS_ADMIN --device /dev/fuse  -v ~/.aws:/root/.aws -v $(pwd)/documents:/opt/documents bokeh bash 
+ docker run -i -t -p 8888:8888 --cap-add SYS_ADMIN --device /dev/fuse  -v ~/.aws:/root/.aws -v $(pwd)/app:/opt/app parallel-vis bash 
  ```
 
  - deploy:

@@ -5,7 +5,6 @@ provider "aws" {
 data "template_file" "worker_bootstrap" {
   template = "${file("boot.sh.tlp")}"
   vars {
-    package = "${data.external.package.result["package"]}"
     is_worker = false
   }
 }
@@ -13,15 +12,10 @@ data "template_file" "worker_bootstrap" {
 data "template_file" "server_bootstrap" {
   template = "${file("boot.sh.tlp")}"
   vars {
-    package = "${data.external.package.result["package"]}"
     is_worker = true
   }
 }
 
-
-data "external" "package" {
-  program = ["bash", "package.sh"]
-}
 
 /* Server */
 resource "aws_instance" "server" {

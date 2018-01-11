@@ -15,9 +15,8 @@ goofys graeme-misc-london /s3/graeme-misc-london
 mkdir -p /s3/stephen-sea-public-london
 goofys stephen-sea-public-london /s3/stephen-sea-public-london
 
-mkdir -p ~/app
-cd ~/app
-git pull 
+cd /opt/app
+git pull
 
 
 
